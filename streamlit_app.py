@@ -16,7 +16,7 @@ with st.sidebar:
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
             st.warning('Please enter your Replicate API key!', icon='⚠️')
         else:
-            st.success('Successful! Ask your questions ..., icon='✅')
+            st.success('Successful! Ask your questions ...', icon='✅')
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     
