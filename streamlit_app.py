@@ -42,7 +42,7 @@ def generate_llama2_response(prompt_input):
             string_dialogue += "User: " + dict_message["content"] + "\n\n"
         else:
             string_dialogue += "Assistant: " + dict_message["content"] + "\n\n"
-    output = replicate.run('a16z-infra/llama7b-v2-chat:4f0a4744c7295c024a1de15e1a63c880d3da035fa1f49bfd344fe076074c8eea', 
+    output = replicate.run('meta/llama-2-70b-chat', 
                            input={"prompt": f"{string_dialogue} {prompt_input} Assistant: ",
                                   "temperature":0.10, "top_p":0.90, "max_length":120, "repetition_penalty":1})
     return output
